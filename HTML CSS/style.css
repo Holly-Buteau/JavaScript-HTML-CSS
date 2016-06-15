@@ -1,0 +1,22 @@
+table{
+    border-style:solid;
+}
+th, td{
+    border-style:solid;
+}
+
+#outer_content{
+    background-color:pink;
+    width:75%;
+    top: 20px;
+    height:25px;
+}
+
+#inner_content{
+   background-color:blue;
+   width:56.25%;
+   top: 24px;
+   height:25px;
+   
+  
+}

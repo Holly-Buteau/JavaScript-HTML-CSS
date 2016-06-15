@@ -1,0 +1,50 @@
+<link rel = "style" type= "text/css" href= "/css/style.css">
+<form id="workout" action="/insert">
+	<fieldset>
+		<legend> What is your Workout?</legend>
+		<label for = "workName"> Name of Workout: </label>
+			<input type="text" name="workName" id="workName"><br>
+		<label for = "reps"> Reps: </label>
+			<input type="number" name="reps" id="reps"><br>
+		<label for = "weight"> Weight Used: </label>
+			<input type= "number" name="weight" id="weight"><br>
+		<label for = "date"> Date: </label>
+			<input type="date" name="date" id="date"><br>
+		<label for = "lbs"> Lbs </label>
+			<input type="radio" name="lbs" value="1" id="lbs"><br>
+		<label for = "kgs"> Kgs </label>
+			<input type="radio" name="lbs" value="0"><br>
+		<input type="submit" id="submit" value="Submit">
+	</fieldset>
+</form>
+
+
+<h1> Your Workout </h1>
+<table id="tblWorkout">
+	<tr>
+		<th style="display:none">ID</th>
+		<th>Workout</th>
+		<th>Reps</th>
+		<th>Weight</th>
+		<th>Lbs or Kgs</th>
+		<th>Date</th>
+		
+	</tr>
+
+	{{#each workout}}
+	
+	<tr>
+		<td style="display:none">{{this.id}}</td>
+		<td>{{this.name}}</td>
+		<td>{{this.reps}}</td>
+		<td>{{this.weight}}</td>
+		<td>{{this.lbs}}</td>
+		<td>{{this.date}}</td>
+		<td><a href="/new?id={{this.id}}"><input type = "button" value="Edit")"></a></td>
+		<td><input type="button" value="Delete" onClick="wDelete"('tblWorkout',this,{{this.id}}"></td>
+	</tr>
+	{{/each}}
+</table>
+
+
+<script src= "/js/script.js"></script>

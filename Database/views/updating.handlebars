@@ -1,0 +1,36 @@
+<form id="workout" action ="/updating">
+	<fieldset>
+		<legend>What is your workout?</legend>
+		<label for="workName">Name of Workout: </label>
+			<input type="text" name = "workName" id="workName" value="{{workout.name}}"><br>
+		 <label for = "reps"> Reps: </label>
+                        <input type="number" name="reps" id="reps" value="{{workout.reps}}"><br>
+		 <label for = "weight"> Weight Used: </label>
+                        <input type= "number" name="weight" id="weight" value="{{workout.weight}}"><br>
+		<label for = "date"> Date: </label>
+                        <input type="date" name="date" id="date" value="{{workout.date}}"><br>
+		{{#if workout.lbs}}
+			   <label for = "lbs"> Lbs </label>
+                       		 <input type="radio" name="lbs" value="1" id="lbs" checked = "checked"><br>
+		  	   <label for = "kgs"> Kgs </label>
+                       		 <inout type="radio" name="lbs" value="0"><br>
+		{{else}}
+			  <label for = "lbs"> Lbs </label>
+                        	<input type="radio" name="lbs" value="1" id="lbs"><br>
+			  <label for = "kgs"> Kgs </label>
+                        	<input type="radio" name="lbs" value="0" checked = "checked"><br>
+		{{/if}}
+
+		<input type="hidden" name="id" value={{workout.id}}>
+		<input type="submit" id="submit" value="Submit">
+	</fieldset>
+
+</form>
+
+
+
+
+
+
+
+		
